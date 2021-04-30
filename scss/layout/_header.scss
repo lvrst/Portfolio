@@ -1,0 +1,67 @@
+.head {
+    padding-top: 40px;
+    padding-bottom: 20px;
+    margin-top: 0!important;
+    background: linear-gradient(to bottom, $color-primary, $color-dark);
+    width: #{"min(100%, 1280px)"}; 
+    text-transform: capitalize;
+    color: aliceblue;
+    text-align: center;
+    font-family: $serif;
+    &__img {
+        height: 150px;
+        width: 150px;
+        object-fit: cover;
+        border: 1px solid $color-dark;
+        border-radius: 50%;
+        background-color: $color-dark;
+    }
+    &__title {
+    font-family: $header-main-font;
+    text-transform: uppercase;
+    }
+    &>p {
+        padding-top: 20px;
+    }
+    &__content {
+        padding: 10px;
+        color: $color-dark;
+    }
+    &__subsection {
+    background-color: $color-light;
+    color: $color-dark;
+    padding: 8px;
+    &__title {
+        color: $color-light;
+        text-align: center;
+        width: 100%;
+        font-family: $header-main-font;
+        text-transform: uppercase;
+        background-color: $color-dark;
+        padding: 10px;
+        transform: scale(0.8);
+    }
+    }
+
+}
+
+
+
+@media screen and (min-width: 900px) {
+    .head {
+        width: 910px;
+        margin: auto;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        gap: 2rem;
+        &__title {
+        width: 100%;
+        }
+    }
+    .head__subsection {
+        background-color: $color-light;
+        padding: 8px;
+        max-width: calc(50% - 2rem + 5px);
+    }
+}

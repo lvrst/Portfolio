@@ -1,0 +1,24 @@
+@mixin q-pseudo-element {
+    font-size: 3rem;
+    vertical-align: middle;
+    padding: 1.5rem;
+    color: $color-primary;
+}
+
+
+figcaption {
+    text-align: right;
+}
+
+q {
+    font-family: $serif;
+    font-style: oblique;
+    &::before {
+        content: '“';
+        @include q-pseudo-element;
+    }
+    &::after {
+        content: '”';
+        @include q-pseudo-element;
+    }
+}

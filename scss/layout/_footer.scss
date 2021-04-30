@@ -1,0 +1,107 @@
+.footer {
+    opacity: 0.95;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    &__container {
+    text-align: center;
+    width: 100%;
+    height: 88px;
+    color: $color-light;
+    background-color: $color-dark;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    }
+}
+
+.share {
+    margin: auto;
+}
+
+.sharing-button {
+    height: 64px;
+    width: 64px;
+    padding: 16px;
+    display: inline-block;
+    opacity: 0.6;
+    transform-origin: bottom;
+    transition: filter .4s .1s, opacity 1s ease-in, transform .3s ease-in-out .1s;
+    &-twitter:hover {
+        filter: 
+        drop-shadow(0 0 12px $color-twitter) 
+        drop-shadow(0 0 16px $color-twitter);
+    &::after {
+        background-color: $color-twitter;
+    }
+    }
+    &-facebook:hover {
+        filter: 
+        drop-shadow(0 0 12px $color-facebook) 
+        drop-shadow(0 0 16px $color-facebook);
+        &::after {
+            background-color: $color-facebook;
+        }
+    }
+    &-pinterest:hover {
+        filter: 
+        drop-shadow(0 0 12px $color-pinterest) 
+        drop-shadow(0 0 16px $color-pinterest);
+        &::after {
+            background-color: $color-pinterest;
+        }
+    }
+    &-linkedin:hover {
+        filter: 
+        drop-shadow(0 0 12px $color-linkedin) 
+        drop-shadow(0 0 16px $color-linkedin);
+        &::after {
+            background-color: $color-linkedin;
+        }
+    }
+    &-svg {
+        fill: white;
+    }
+    &:hover {
+        opacity: 1!important;
+        transform: scale(1.2);
+        &::after {
+            display: block;
+            margin: 8px auto;
+            content: "";
+            height: 4px;
+            width: 1.5rem;
+        }
+    }
+}
+
+
+.foot {
+    color: $color-light;
+    background-color: $color-dark;
+    text-align: center;
+    padding-bottom: 90px;
+
+}
+
+@media screen and (min-width: 900px) {
+    .footer {
+        &__container {
+            width: clamp(100px, 40%, 600px);
+        }
+        &::before {
+            content: "";
+            border-bottom: 88px solid $color-dark;
+            border-left: 88px solid transparent; 
+        }
+    
+        &::after {
+            content: "";
+            border-right: 88px solid transparent;
+            border-bottom: 88px solid $color-dark;
+        }
+    }
+}
